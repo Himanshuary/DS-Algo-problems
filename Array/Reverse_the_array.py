@@ -1,26 +1,36 @@
-from array import*
-# 1st method
-print("first method")
+from audioop import reverse
 
-def reverse(arr,l,r):
-    while l<r:
-        arr[l],arr[r] = arr[r],arr[l]
-        l=l+1
-        r=r-1
-    return arr
-#a = list(map(int, input().split()))
-a = [1,2,3,4,5]
-n = len(a)
-r = n-1
-print(reverse(a,0,r))
 
-# second method
-print("second method--")
-a = a[::-1]
-print(a)
+l = [1,2,3,4,5]
+n = len(l)
 
-#third method
-print('Third method')
-arr1 = array('i', [1,2,3,4,5])
-arr1.reverse()
-print(arr1)
+# Approach1: swaping
+start = 0
+end = n - 1
+swap = 0
+while start < end:
+    swap = l[start]
+    l[start] = l[end]
+    l[end] = swap
+    start = start + 1
+    end = end - 1
+print(l)
+
+# Approach2: Using insert method
+l1 = [10,20,30,40,50]
+l2 = []
+
+for i in l1:
+    l2.insert(0,i)
+
+print("Second reverse list: ",l2)
+
+# Approach3: Using slicing method
+list_prime = [1,2,3,5,7]
+print("The third reverse list: ",list_prime[::-1])
+
+
+#Approach4: using buit- in reverse method
+list_iteam = [0,9,8,7,6,5]
+list_iteam.reverse()
+print("Forth reverse list: ",list_iteam)
